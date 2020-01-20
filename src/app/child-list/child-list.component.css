@@ -1,0 +1,11 @@
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th{
+  width: 200px;
+}
+button{
+  background: rgb(245, 52, 39) ; 
+  font-size:15px 
+}

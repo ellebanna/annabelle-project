@@ -1,0 +1,41 @@
+.center{
+    text-align: center;
+    margin-left: 90px;
+}
+button{
+    background: rgb(245, 52, 39) ; 
+    font-size:20px ;
+    margin-left: 500px;
+}
+.card2 {
+    border-radius: 20px;
+    border-style: outset;
+    background-color: #c0ecee;
+    width: 1200px;
+    margin: 0 8px 16px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+
+
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+    margin-top: -5px;
+  }
+
+.floatLeft{
+    float: left;
+    margin-left: 100px;
+}
+.floatRight{
+    float:right;
+    margin-left: 50px;
+}
+input, select{
+    background-color: #d5f0f1;
+}
+label,span{
+    font-size: 15px;
+}
+  
+  

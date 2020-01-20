@@ -1,0 +1,27 @@
+<table >
+    <tr>
+        <th>Name</th>
+        <th>Birth</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Phone<br>Number</th>
+        <th>Email</th>
+        <th>Guardian</th>
+        <th>Guardian<br>Number</th>
+        <th>Sought</th>
+        <th>Edit</th>
+
+    </tr>
+    <tr *ngFor="let student of studentList">
+        <td>{{student.name }}</td>
+        <td>{{student.birth }}</td>
+        <td>{{student.gender }}</td>
+        <td>{{student.residential }}</td>
+        <td>{{student.phoneNo }}</td>
+        <td>{{student.email }}</td>
+        <td>{{student.guardian }}</td>
+        <td>{{student.gphoneNo }}</td>
+        <td>{{student.sought  }}</td>
+        <td><button (click) = "onEdit(student)">Edit</button> </td>
+    </tr>
+</table>
