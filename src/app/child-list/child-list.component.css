@@ -9,3 +9,15 @@ button{
   background: rgb(245, 52, 39) ; 
   font-size:15px 
 }
+.center{
+  text-align: center;
+}
+.backButton{
+  margin-left: 1020px;
+  font-weight: bold;
+  font-size: 17px;
+  float: right;
+}
+.left{
+  float: left;
+}

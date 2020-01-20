@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Form } from '@angular/forms';
 
 @Component({
@@ -9,17 +9,23 @@ import { Form } from '@angular/forms';
 export class ChildListComponent implements OnInit {
 
   @Input() studentList: Array<Form>;
-  
   @Output() newEdit = new EventEmitter();
-  
+
+  @Output() list2 = new EventEmitter()
+  @Output() register2 = new EventEmitter()
+
   constructor() { }
 
   ngOnInit() {
   }
-  onEdit(newInfo){
+  onEdit(newInfo) {
     this.newEdit.emit(newInfo)
-   
-    console.log("edit", newInfo)
+    this.register2.emit(true)
+    this.list2.emit(false)
+  }
+  back() {
+    this.register2.emit(true)
+    this.list2.emit(false)
   }
 
 }

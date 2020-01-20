@@ -11,9 +11,9 @@ export class RegistrationFormComponent implements OnInit {
   mnhslogo = "https://georgelumayag.weebly.com/uploads/1/1/9/2/119208204/mnhs-logo-png-gpl_1_orig.png"
 
   public infoList:Array<Form>
-  public list = false;
   public data:Form
   public register = true;
+  public list = false;
 
 
   constructor() {  
@@ -24,10 +24,12 @@ export class RegistrationFormComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit(data) {
-    console.log(data.form.value)
     this.infoList.push(data.form.value)
+    console.log(this.infoList)
     data.form.reset();
+    this.register = false
     this.list = true
+    alert(" Successfully Registered!" )
   }
   editForm(info) {
     this.data = info;
