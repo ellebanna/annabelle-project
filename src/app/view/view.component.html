@@ -1,0 +1,16 @@
+<div class=container>
+    <div class="card2" style="width:900px" *ngFor="let info of infoList">
+        <h3>ID: <br>{{info.id}}</h3>
+        <hr>
+        <h3>NAME: <br>{{info.name}} </h3>
+        <hr>
+        <h3>EMAIL: <br>{{info.email}} </h3>
+        <hr>
+        <h3>PHONE NUMBER: <br>{{info.phone}} </h3>
+
+    </div>
+    <div>
+        <button class="btn btn-primary" routerLink="/dashboard">Back to Dashboard</button>
+    </div>
+
+</div>

@@ -3,32 +3,36 @@
     margin-left: 90px;
 }
 button{
-    background: rgb(245, 52, 39) ; 
+    background: rgb(47, 131, 241) ; 
     font-size:20px ;
-    margin-left: 570px;
+    width:120px
 }
-.card2 {
+.card {
     border-radius: 10px;
     border-style: outset;
     background-color: #c0ecee;
-    width: 1200px;
-    margin: 0 8px 16px;
+    margin: 0 20px 16px;
     padding: 10px;
     display: flex;
-    flex-direction: row;
     transition: all 0.2s ease-in-out;
     line-height: 24px;
-    margin-top: -5px;
+    margin-top: 100px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.9);
   }
+  .card2 {
+    border-radius: 10px;
+    border-style: outset;
+    background-image: url();
+	box-shadow: 0 20px 20px rgba(0, 0, 0, 0.9);
+    margin: 0 60px 16px;
+    padding: 10px;
+    display: flex;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+    margin-top: 25px;
+  }
+  
 
-.floatLeft{
-    float: left;
-    margin-left: 100px;
-}
-.floatRight{
-    float:right;
-    margin-left: 50px;
-}
 input, select{
     background-color: #d5f0f1;
     width: 190px
@@ -37,4 +41,18 @@ label,span{
     font-size: 15px;
 }
   
+.toolbar {
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #c0ecee;
+    font-weight: 600;
+  }
+  .home{ 
+    font-size:20px ;
+    width:200px;
+    margin-left: 350px;
+    margin-top: 10px
+}
   

@@ -1,0 +1,19 @@
+
+button{ 
+    font-size:20px ;
+    width:200px;
+    margin-left: 780px
+}
+.card2 {
+    border-radius: 10px;
+    border-style: outset;
+    background-image: url();
+	box-shadow: 0 20px 20px rgba(0, 0, 0, 0.9);
+    margin: 0 90px 16px;
+    padding: 10px;
+    display: flex;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+    margin-top: 200px;
+  }
+

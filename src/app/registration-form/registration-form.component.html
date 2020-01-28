@@ -1,123 +1,78 @@
-<div class="card2" *ngIf="register">
-    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
-        <div class="center">
-            <img width="80" height="auto" alt="DepED Logo" [src]="mnhslogo" />
-            <br><label>Mantalongon National High School</label><br>
-            <label>Mantalogon, Dalaguete, Cebu</label><br>
-            <label>mantalongon_nhsdalaguete@yahoo.com</label><br>
-        </div>
-        <div>
-            <h4 class="center">Application Form for Admission</h4>
-        </div>
-        <div>
-            <div class="floatLeft">
-                <label>Name of Student: </label>
-                <input ngModel name="name" [(ngModel)]="data.name" required #name="ngModel" minlength="5" placeholder="Full name" />
-                <div *ngIf="name.invalid && (name.dirty || name.touched)" class=" alert alert-danger">
-                    <p *ngIf="name.errors.required">
-                        This field is required!
-                    </p>
-                    <p *ngIf="name.errors.minlength">
-                        Must at least 5 characters!
-                    </p>
+<div class="container floatLeft" role="main">
+    <div class="card" style="width:400px" *ngIf="register">
+        <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <div *ngIf="edit">
+                <label>ID: </label><br>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input class="form-control" ngModel name="id" [(ngModel)]="newid" type="number" required #id="ngModel"
+                        placeholder="Id" />
                 </div>
-                <hr>
-                <br>
-                <label> Date of Birth: </label>
-                <input ngModel name="birth" [(ngModel)]="data.birth" required #bday="ngModel" type="date">
-                <div *ngIf="bday.invalid && (bday.dirty || bday.touched)" class=" alert alert-danger">
-                    <p *ngIf="bday.errors.required">
+                <div class="alert alert-danger" *ngIf="id.invalid && (id.dirty || id.touched)" class=" alert alert-danger">
+                    <p *ngIf="id.errors.required">
                         This field is required!
                     </p>
                 </div>
-                <label> Gender: </label>
-                <select ngModel name="gender" [(ngModel)]="data.gender" required #gendername="ngModel">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
-                <div *ngIf="gendername.invalid && (gendername.dirty || gendername.touched)" class=" alert alert-danger">
-                    <p *ngIf="gendername.errors.required">
-                        This field is required!
-                    </p>
-                </div>
-                <hr>
-                <br>
-                <label>Residential Address: </label>
-                <input ngModel name="residential" [(ngModel)]="data.residential" required #residentialname="ngModel"
-                    minlength="5" />
-                <div *ngIf="residentialname.invalid && (residentialname.dirty || residentialname.touched)" class=" alert alert-danger">
-                    <p *ngIf="residentialname.errors.required">
-                        This field is required!
-                    </p>
-                    <p *ngIf="residentialname.errors.minlength">
-                        Must at least 5 characters!
-                    </p>
-                </div>
-                <hr>
-                <br>
-                <label> Contact </label><label> Phone Number: </label>
-                <input ngModel type="tel" name="phoneNo" [(ngModel)]="data.phoneNo" #phone="ngModel" value="09" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"
-                    required>
-                <span> Format: 0923-161-5542</span>
-                <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class=" alert alert-danger">
-                    <p *ngIf="phone.errors.required">
-                        This field is required!
-                    </p>
-                </div>
+            </div>
+            <hr>
 
+            <label>Name of Student: </label><br>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input class="form-control" ngModel name="name" [(ngModel)]="newname" required #name="ngModel"
+                    minlength="5" placeholder="ex. Annabelle Belciña" />
             </div>
-            <div class="floatRight">
-                <label> Email: </label>
-                <input ngModel name="email" [(ngModel)]="data.email" required #emailname="ngModel" type="email" [email]="true" />
-                <div *ngIf="emailname.invalid && (emailname.dirty || emailname.touched)" class=" alert alert-danger">
-                    <p *ngIf="emailname.errors.required">
-                        This field is required!
-                    </p>
-                    <p *ngIf="emailname.errors.email">
-                        Must be in email format!
-                    </p>
-                </div>
-                <hr>
-                <br>
-                <label>Name of Guardian: </label>
-                <input ngModel name="guardian" [(ngModel)]="data.guardian" required #gaurdianname="ngModel" minlength="5" />
-                <div *ngIf="gaurdianname.invalid && (gaurdianname.dirty || gaurdianname.touched)" class=" alert alert-danger">
-                    <p *ngIf="gaurdianname.errors.required">
-                        This field is required!
-                    </p>
-                    <p *ngIf="gaurdianname.errors.minlength">
-                        Must at least 5 characters!
-                    </p>
-                </div>
-                <hr>
-                <br>
-                <label> Contact No.: </label>
-                <input ngModel type="tel" name="gphoneNo" [(ngModel)]="data.gphoneNo" #gphone="ngModel" value="09"
-                    pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" required>
-                <span> Format: 0923-161-5542</span>
-                <div *ngIf="gphone.invalid && (gphone.dirty || gphone.touched)" class=" alert alert-danger">
-                    <p *ngIf="gphone.errors.required">
-                        This field is required!
-                    </p>
-                </div>
-                <hr>
-                <br>
-                <label>Class in which submission is sought: </label>
-                <input ngModel name="sought" [(ngModel)]="data.sought" required #soughtname="ngModel" minlength="5" />
-                <div *ngIf="soughtname.invalid && (soughtname.dirty || soughtname.touched)" class=" alert alert-danger">
-                    <p *ngIf="soughtname.errors.required">
-                        This field is required!
-                    </p>
-                    <p *ngIf="soughtname.errors.minlength">
-                        Must at least 5 characters!
-                    </p>
-                </div>
+            <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)" class=" alert alert-danger">
+                <p *ngIf="name.errors.required">
+                    This field is required!
+                </p>
+                <p *ngIf="name.errors.minlength">
+                    Must at least 5 characters!
+                </p>
             </div>
-        </div>
-        <br><br>
-        <button [disabled]="!form.form.valid">Submit</button>
-    </form>
+            <hr>
+
+            <label> Email: </label><br>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input class="form-control" ngModel name="email" [(ngModel)]="newemail" required #emailname="ngModel"
+                    type="email" [email]="true" placeholder="ex. anna@gmail.com" />
+            </div>
+            <div class="alert alert-danger" *ngIf="emailname.invalid && (emailname.dirty || emailname.touched)" class=" alert alert-danger">
+                <p *ngIf="emailname.errors.required">
+                    This field is required!
+                </p>
+                <p *ngIf="emailname.errors.email">
+                    Must be in email format!
+                </p>
+            </div>
+            <hr>
+
+            <label> Phone Number: </label>
+
+            <span> Format: 0923-161-5542</span>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input class="form-control" ngModel name="phone" [(ngModel)]="newphone" #phone="ngModel" required
+                    placeholder="0923-161-5542">
+            </div>
+            <div class="alert alert-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)" class=" alert alert-danger">
+                <p *ngIf="phone.errors.required">
+                    This field is required!
+                </p>
+            </div>
+            <br><br>
+            <button class="btn btn-primary" [disabled]="!form.form.valid">{{submit}}</button> <button class="btn btn-info"
+                (click)="showlist()">Show List</button>
+        </form>
+    </div>
 </div>
-<div class="card2" *ngIf="list">
-    <app-child-list (newEdit)="editForm($event)" [studentList]="infoList" (register2)="register = $event" (list2)="list = $event"></app-child-list>
+<div>
+    <button class=" home btn btn-primary" routerLink="/home">Back to Home</button>
+</div>
+<div class="container floatRight">
+    <div class="card2" style="width:900px" *ngIf="list">
+        <app-child-list (newEdit)="editForm($event)" [studentList]="infoList" (register2)="register = $event" (edit)="edit = $event"
+            (list2)="list = $event"></app-child-list>
+    </div>
 </div>
